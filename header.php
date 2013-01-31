@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" media="print" href="{hi:siteurl:theme}/print.css">
 	<link rel="Shortcut Icon" href="/favicon.ico">
 	
-	{hi:@header}
+	{hi:@header_out}
 	<script type="text/javascript">
 	$(document).ready(function() {
 	$('#content *').tooltip();

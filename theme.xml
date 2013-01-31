@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pluggable type="theme">
-        <name>The Prestige</name>
-	<class>PrestigeTheme</class>
+<pluggable type="theme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schemas.habariproject.org/pluggable/0.8">
+	<name>The Prestige</name>
 	<author>Michael Bishop</author>
 	<author>Rick Cockrum</author>
 	<url>http://miklb.com</url>
-        <version>0.8</version>
-        <template_engine>hiengine</template_engine>
+	<version>0.9</version>
+	<template_engine>hiengine</template_engine>
 	<description>A custom Habari theme utilizing the Habari Hiengine theme framework.</description>
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
+	<areas>
+		<area name="sidebar_bottom">
+			<description><![CDATA[Sidebar Bottom]]></description>
+		</area>
+	<area name="post_top">
+		 <description><![CDATA[Post Top]]></description>
+	</area>
+	<area name="post_bottom">
+		<description><![CDATA[Post Bottom]]></description>
+	</area>
+	</areas>
+	<recommends>
+		<feature url="http://wiki.habariproject.org/en/feature/block">block</feature>
+	</recommends>
+	<provides>
+		<feature url="http://wiki.habariproject.org/en/feature/area">area</feature>
+	</provides>
 </pluggable>

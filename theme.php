@@ -45,11 +45,11 @@ class PrestigeTheme extends Theme
 	{
 		parent::add_template_vars();
 		if( !$this->template_engine->assigned( 'pages' ) ) {
-			$this->assign('pages', Posts::get( array( 'content_type' => 'page', 'status' => Post::status('published'), 'nolimit' => true ) ) );
+			$this->assign( 'pages', Posts::get( 'page_list' ) );
 		}
 		if( !$this->template_engine->assigned( 'asides' ) ) {
 			//For Asides loop in sidebar.php
-			$this->assign( 'asides', Posts::get( array( 'vocabulary' => array( 'tags:tag' => 'aside' ), 'limit'=>5) ) );
+			$this->assign( 'asides', Posts::get( 'asides' ) );
 		}
 		if( !$this->template_engine->assigned( 'recent_comments' ) ) {
 			//for recent comments loop in sidebar.php
@@ -66,16 +66,20 @@ class PrestigeTheme extends Theme
 			$this->assign('all_tags', Tags::vocabulary()->get_tree() );
 		}
 		if( !$this->template_engine->assigned( 'all_entries' ) ) {
-			// List of all the tags
+			// List of all the entries
 			$this->assign('all_entries', Posts::get( array( 'content_type' => 'entry', 'status' => 'published', 'nolimit' => 1 ) ) );
 		}
 		
+	}
+
+	public function action_template_header( $theme )
+	{
 		Stack::add('template_header_javascript', Site::get_url('scripts') . "/jquery.js", 'jquery' );
 		Stack::add('template_header_javascript', Site::get_url('theme') . "/js/jquery.bigframe.js", 'jquery.bigframe', 'jquery' );
 		Stack::add('template_header_javascript', Site::get_url('theme') . "/js/jquery.dimensions.js", 'jquery.dimensions', 'jquery' );
 		Stack::add('template_header_javascript', Site::get_url('theme') . "/js/jquery.tooltip.js", 'jquery.tooltip', 'jquery' );
-		
 	}
+
 
 	public function act_display_home( $user_filters= array() )
 	{

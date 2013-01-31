@@ -10,15 +10,10 @@
 		</ul>
 	<h2 id="syndicate">Subscribe</h2>
 		<ul id="subscribe">
-			<li><a href="{hi:@feed_site}" title="Atom 1.0">Get Updates Via RSS</a></li>
+			<li><a href="{hi:@feed_site_out}" title="Atom 1.0">Get Updates Via RSS</a></li>
 		</ul>
 	{hi:@twitter}
 		
-	{hi:@show_recentcomments}
-	{hi:?Plugins::is_loaded( 'monthly_archives' )}
-		<h2 id="month_archive">{hi:"Archives"}</h2>
-	{/hi:?}
-	{hi:@monthly_archives}
-	
-	
+        {hi:area:sidebar_bottom}
+
 </div>

@@ -34,7 +34,7 @@
 			</div>
 {hi:display:sidebar}			
 			<div id="pagenav" class="clear">
-				<p>{hi:@prev_page_link} {hi:@page_selector} {hi:@next_page_link}
+				<p>{hi:@prev_page_link_out} {hi:@page_selector_out} {hi:@next_page_link_out}
 			</div>
 
 		</div>
