@@ -43,9 +43,10 @@
 	{/hi:?}
 
 
-	{hi:?post.info.comments_disabled != 0}
+	{hi:?post.info.comments_disabled}
 	
-		{hi:@comment_form}
+	{hi:?else?}
+		{hi:@comment_form_out}
 	{/hi:?}
 </div>
 <!-- end id comments -->
